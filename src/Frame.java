@@ -5,24 +5,24 @@ import java.awt.event.ActionListener;
 
 public class Frame extends JFrame {
 
-    static final String gapList[] = {"0", "10", "15", "20"};
-    final static int maxGap = 20;
+    private static final String[] gapList = {"0", "10", "15", "20"};
+    private final static int maxGap = 20;
     public String result;
-    JComboBox horGapComboBox;
-    JComboBox verGapComboBox;
-    GridLayout experimentLayout = new GridLayout(0,3);
+    private JComboBox horGapComboBox;
+    private JComboBox verGapComboBox;
+    private GridLayout experimentLayout = new GridLayout(0,3);
 
-    public Frame(String name) {
+    private Frame(String name) {
         super(name);
         setResizable(false);
     }
 
-    public void initGaps() {
+    private void initGaps() {
         horGapComboBox = new JComboBox(gapList);
         verGapComboBox = new JComboBox(gapList);
     }
 
-    public void addComponentsToPane(final Container pane) {
+    private void addComponentsToPane(final Container pane) {
         initGaps();
         final JPanel compsToExperiment = new JPanel();
         compsToExperiment.setLayout(experimentLayout);
