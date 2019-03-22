@@ -17,18 +17,13 @@ public class Frame extends JFrame {
         setResizable(false);
     }
 
-    private void initGaps() {
-        horGapComboBox = new JComboBox(gapList);
-        verGapComboBox = new JComboBox(gapList);
-    }
-
     private void addComponentsToPane(final Container pane) {
-        initGaps();
+
         final JPanel compsToExperiment = new JPanel();
         compsToExperiment.setLayout(experimentLayout);
         JPanel controls = new JPanel();
         controls.setLayout(new GridLayout(3,3));
-        JButton calculate = new JButton("Calculate");
+        JButton determinant = new JButton("Determinant");
         JLabel result = new JLabel("Result:");
 
         JTextField a1 = new JTextField(5);
@@ -58,12 +53,9 @@ public class Frame extends JFrame {
         compsToExperiment.add(a8);
         compsToExperiment.add(a9);
 
-
         //Add controls to set up horizontal and vertical gaps
-        controls.add(calculate);
+        controls.add(determinant);
         controls.add(result);
-        //controls.add(horGapComboBox);
-        //controls.add(verGapComboBox);
 
         String horGap = "10";
         String verGap = "10";
@@ -76,7 +68,7 @@ public class Frame extends JFrame {
         pane.add(new JSeparator(), BorderLayout.CENTER);
         pane.add(controls, BorderLayout.SOUTH);
 
-        calculate.addActionListener(new ActionListener() {
+        determinant.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Button Pressed");
