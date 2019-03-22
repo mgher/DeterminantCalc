@@ -5,11 +5,8 @@ import java.awt.event.ActionListener;
 
 public class Frame extends JFrame {
 
-    private static final String[] gapList = {"0", "10", "15", "20"};
     private final static int maxGap = 20;
     public String result;
-    private JComboBox horGapComboBox;
-    private JComboBox verGapComboBox;
     private GridLayout experimentLayout = new GridLayout(0,3);
 
     private Frame(String name) {
@@ -42,7 +39,7 @@ public class Frame extends JFrame {
         compsToExperiment.setPreferredSize(new Dimension((int)(buttonSize.getWidth() * 10.5)+maxGap,
                 (int)(buttonSize.getHeight() * 10.5)+maxGap * 2));
 
-        //Add buttons to experiment with Grid Layout
+        //Add TextFields
         compsToExperiment.add(a1);
         compsToExperiment.add(a2);
         compsToExperiment.add(a3);
@@ -53,7 +50,7 @@ public class Frame extends JFrame {
         compsToExperiment.add(a8);
         compsToExperiment.add(a9);
 
-        //Add controls to set up horizontal and vertical gaps
+        //Add controls to set up buttons
         controls.add(determinant);
         controls.add(result);
 
