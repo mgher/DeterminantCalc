@@ -40,10 +40,32 @@ public class Frame extends JFrame {
         JTextField a7 = new JTextField(5);
         JTextField a8 = new JTextField(5);
         JTextField a9 = new JTextField(5);
+        JTextField i1 = new JTextField(5);
+        JTextField i2 = new JTextField(5);
+        JTextField i3 = new JTextField(5);
+        JTextField i4 = new JTextField(5);
+        JTextField i5 = new JTextField(5);
+        JTextField i6 = new JTextField(5);
+        JTextField i7 = new JTextField(5);
+        JTextField i8 = new JTextField(5);
+        JTextField i9 = new JTextField(5);
 
+        i1.setEditable(false);
+        i2.setEditable(false);
+        i3.setEditable(false);
+        i4.setEditable(false);
+        i5.setEditable(false);
+        i6.setEditable(false);
+        i7.setEditable(false);
+        i8.setEditable(false);
+        i9.setEditable(false);
+
+        i1.setText("yo");
+        i2.setText("ye");
         //Set up components preferred size
         JButton b = new JButton("");
         Dimension buttonSize = b.getPreferredSize();
+        compsToExperiment.setLayout(new GridLayout(3,6));
         compsToExperiment.setPreferredSize(new Dimension((int)(buttonSize.getWidth() * 10.5)+maxGap,
                 (int)(buttonSize.getHeight() * 10.5)+maxGap * 2));
 
@@ -57,10 +79,20 @@ public class Frame extends JFrame {
         compsToExperiment.add(a7);
         compsToExperiment.add(a8);
         compsToExperiment.add(a9);
+        compsToExperiment.add(i1);
+        compsToExperiment.add(i2);
+        compsToExperiment.add(i3);
+        compsToExperiment.add(i4);
+        compsToExperiment.add(i5);
+        compsToExperiment.add(i6);
+        compsToExperiment.add(i7);
+        compsToExperiment.add(i8);
+        compsToExperiment.add(i9);
 
 
-        //Add controls to set up horizontal and vertical gaps
+
         controls.add(calculate);
+        controls.add(new JButton("Inverse"));
         controls.add(result);
         //controls.add(horGapComboBox);
         //controls.add(verGapComboBox);
