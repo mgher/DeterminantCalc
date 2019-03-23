@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 public class Frame extends JFrame {
 
     private final static int maxGap = 20;
-    public String result;
     private GridLayout experimentLayout = new GridLayout(0,3);
 
     private Frame(String name) {
@@ -54,11 +53,8 @@ public class Frame extends JFrame {
         controls.add(determinant);
         controls.add(result);
 
-        String horGap = "10";
-        String verGap = "10";
-
-        experimentLayout.setHgap(Integer.parseInt(horGap));
-        experimentLayout.setVgap(Integer.parseInt(verGap));
+        experimentLayout.setHgap(10);
+        experimentLayout.setVgap(10);
         experimentLayout.layoutContainer(compsToExperiment);
 
         pane.add(compsToExperiment, BorderLayout.NORTH);
