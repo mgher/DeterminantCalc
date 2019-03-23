@@ -29,6 +29,7 @@ public class Frame extends JFrame {
         JPanel controls = new JPanel();
         controls.setLayout(new GridLayout(3,3));
         JButton determinant = new JButton("Determinant");
+        JButton inverse = new JButton("Inverse");
         JLabel result = new JLabel("Result:");
 
         JTextField a1 = new JTextField(5);
@@ -94,7 +95,7 @@ public class Frame extends JFrame {
 
 
         controls.add(determinant);
-        controls.add(new JButton("Inverse"));
+        controls.add(inverse);
         controls.add(result);
         //controls.add(horGapComboBox);
         //controls.add(verGapComboBox);
@@ -111,7 +112,7 @@ public class Frame extends JFrame {
         determinant.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Button Pressed");
+                System.out.println("Determinant Button Pressed");
                 int int1 = Integer.valueOf(a1.getText());
                 int int2 = Integer.valueOf(a2.getText());
                 int int3 = Integer.valueOf(a3.getText());
@@ -130,6 +131,13 @@ public class Frame extends JFrame {
             }
         });
 
+        inverse.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Inverse Button Pressed");
+            }
+        });
+
 
     }
     public void displayDeterminant() {
@@ -143,7 +151,7 @@ public class Frame extends JFrame {
      */
     public static void createAndShowGUI() {
         //Create and set up the window.
-        Frame frame = new Frame("Determinant of 3x3 Matrix Calculator");
+        Frame frame = new Frame("3x3 Matrix Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //Set up the content pane.
         frame.addComponentsToPane(frame.getContentPane());
