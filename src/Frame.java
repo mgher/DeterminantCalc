@@ -5,16 +5,25 @@ import java.awt.event.ActionListener;
 
 public class Frame extends JFrame {
 
-    private final static int maxGap = 20;
-    private GridLayout experimentLayout = new GridLayout(0,3);
+    static final String gapList[] = {"0", "10", "15", "20"};
+    final static int maxGap = 20;
+    public String result;
+    JComboBox horGapComboBox;
+    JComboBox verGapComboBox;
+    GridLayout experimentLayout = new GridLayout(0,3);
 
-    private Frame(String name) {
+    public Frame(String name) {
         super(name);
         setResizable(false);
     }
 
-    private void addComponentsToPane(final Container pane) {
+    public void initGaps() {
+        horGapComboBox = new JComboBox(gapList);
+        verGapComboBox = new JComboBox(gapList);
+    }
 
+    public void addComponentsToPane(final Container pane) {
+        initGaps();
         final JPanel compsToExperiment = new JPanel();
         compsToExperiment.setLayout(experimentLayout);
         JPanel controls = new JPanel();
@@ -32,27 +41,65 @@ public class Frame extends JFrame {
         JTextField a8 = new JTextField(5);
         JTextField a9 = new JTextField(5);
 
+        JTextField i1 = new JTextField(5);
+        JTextField i2 = new JTextField(5);
+        JTextField i3 = new JTextField(5);
+        JTextField i4 = new JTextField(5);
+        JTextField i5 = new JTextField(5);
+        JTextField i6 = new JTextField(5);
+        JTextField i7 = new JTextField(5);
+        JTextField i8 = new JTextField(5);
+        JTextField i9 = new JTextField(5);
+
+        i1.setEditable(false);
+        i2.setEditable(false);
+        i3.setEditable(false);
+        i4.setEditable(false);
+        i5.setEditable(false);
+        i6.setEditable(false);
+        i7.setEditable(false);
+        i8.setEditable(false);
+        i9.setEditable(false);
+
+        i1.setText("");
+        i2.setText("");
         //Set up components preferred size
         JButton b = new JButton("");
         Dimension buttonSize = b.getPreferredSize();
+        compsToExperiment.setLayout(new GridLayout(3,3));
         compsToExperiment.setPreferredSize(new Dimension((int)(buttonSize.getWidth() * 10.5)+maxGap,
                 (int)(buttonSize.getHeight() * 10.5)+maxGap * 2));
 
-        //Add TextFields
+        //Add buttons to experiment with Grid Layout
         compsToExperiment.add(a1);
         compsToExperiment.add(a2);
         compsToExperiment.add(a3);
+        compsToExperiment.add(i1);
+        compsToExperiment.add(i2);
+        compsToExperiment.add(i3);
         compsToExperiment.add(a4);
         compsToExperiment.add(a5);
         compsToExperiment.add(a6);
+
+        compsToExperiment.add(i4);
+        compsToExperiment.add(i5);
+        compsToExperiment.add(i6);
         compsToExperiment.add(a7);
         compsToExperiment.add(a8);
         compsToExperiment.add(a9);
+        compsToExperiment.add(i7);
+        compsToExperiment.add(i8);
+        compsToExperiment.add(i9);
 
-        //Add controls to set up buttons
+
+
         controls.add(determinant);
+        controls.add(new JButton("Inverse"));
         controls.add(result);
+        //controls.add(horGapComboBox);
+        //controls.add(verGapComboBox);
 
+        compsToExperiment.setLayout(new GridLayout(3,3));
         experimentLayout.setHgap(10);
         experimentLayout.setVgap(10);
         experimentLayout.layoutContainer(compsToExperiment);
