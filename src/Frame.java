@@ -113,21 +113,25 @@ public class Frame extends JFrame {
 
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Determinant Button Pressed");
-                int int1 = Integer.valueOf(a1.getText());
-                int int2 = Integer.valueOf(a2.getText());
-                int int3 = Integer.valueOf(a3.getText());
-                int int4 = Integer.valueOf(a4.getText());
-                int int5 = Integer.valueOf(a5.getText());
-                int int6 = Integer.valueOf(a6.getText());
-                int int7 = Integer.valueOf(a7.getText());
-                int int8 = Integer.valueOf(a8.getText());
-                int int9 = Integer.valueOf(a9.getText());
+                try {
+                    int int1 = Integer.valueOf(a1.getText());
+                    int int2 = Integer.valueOf(a2.getText());
+                    int int3 = Integer.valueOf(a3.getText());
+                    int int4 = Integer.valueOf(a4.getText());
+                    int int5 = Integer.valueOf(a5.getText());
+                    int int6 = Integer.valueOf(a6.getText());
+                    int int7 = Integer.valueOf(a7.getText());
+                    int int8 = Integer.valueOf(a8.getText());
+                    int int9 = Integer.valueOf(a9.getText());
 
-                DeterminantCalc calc = new DeterminantCalc();
-                int result2 = 0;
-                result2 = calc.determinantCalc(int1, int2, int3, int4, int5, int6, int7, int8, int9);
-                System.out.println(result2);
-                result.setText("Result: " + Integer.toString(result2));
+                    DeterminantCalc calc = new DeterminantCalc();
+                    int result2 = 0;
+                    result2 = calc.determinantCalc(int1, int2, int3, int4, int5, int6, int7, int8, int9);
+                    System.out.println(result2);
+                    result.setText("Result: " + Integer.toString(result2));
+                } catch (Exception f) {
+                    result.setText("Result: Error");
+                }
             }
         });
 
